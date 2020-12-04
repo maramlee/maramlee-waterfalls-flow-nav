@@ -2,7 +2,9 @@
 
 ## 前言
 
-maramlee-waterfalls-flow-nav 是基于 maramlee-waterfalls-flow 为了解决很多小伙伴儿实际场景使用瀑布流需要使用 nav 切换数据而封装的插件。没错，使用这个插件，记得先安装 [maramlee-waterfalls-flow](https://ext.dcloud.net.cn/plugin?id=2714#rating) 插件。当然，除了 maramlee-waterfalls-flow 插件，还有需安装 [uni-load-more](https://ext.dcloud.net.cn/plugin?id=29)（加载更多） 插件。
+maramlee-waterfalls-flow-nav 是基于 maramlee-waterfalls-flow 为了解决很多小伙伴儿实际场景使用瀑布流需要使用 nav 切换数据而封装的插件。
+
+没错，使用这个插件，原来的 [maramlee-waterfalls-flow](https://ext.dcloud.net.cn/plugin?id=2714#rating) 插件也是可以继续用的。
 
 ## 使用方式
 
