@@ -230,19 +230,6 @@ weixin_type: {
 
 ## 属性说明
 
-<!-- navIndex: { type: Number, required: true },
-    navData: { type: Array, required: true },
-
-    /**
-     * nav 渲染 key
-     * 注意查看我的示例里
-     * navData 数据格式与之对应：[{ key: "one", label: "nav 1" }]
-     */
-    list_key: { type: String, default: "key" },
-    list_label: { type: String, default: "label" },
-    // mounted 时，是否请求数据，默认请求
-    mountedGet: { type: Boolean, default: true }, -->
-
 | 属性名      | 类型    | 默认值    | 是否必传 | 说明                                                        | 平台支持         |
 | ----------- | ------- | --------- | -------- | ----------------------------------------------------------- | ---------------- |
 | navData     | Array   | -         | 是       | 渲染 nav 的列表，一般格式为：[{ key: "one", label: "nav" }] | 全               |
