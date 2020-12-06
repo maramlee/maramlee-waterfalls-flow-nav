@@ -6,12 +6,14 @@
       :navData="navData"
       @add-data="getListHandle"
     >
+      <!-- #ifndef  MP-WEIXIN -->
       <template v-slot:default="item">
         <view class="cnt">
           <view class="title">{{ item.title }}</view>
           <view class="text">{{ item.text }}</view>
         </view>
       </template>
+      <!-- #endif -->
     </waterfallsFlowNav>
   </view>
 </template>

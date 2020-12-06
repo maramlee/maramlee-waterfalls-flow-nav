@@ -134,7 +134,7 @@ export default {
 
 注意：微信小程序没有动态模板，也和 vue 的插槽使用方式不一样。
 
-由于小程序的复杂性，又不想数据提到外层，我在插件里面定义了一个 weixin_type prop ，用于小程序不同模板控制。小程序使用时，需使用者自己去配置 maramlee-waterfalls-flow-nav 插件的模板内容。
+由于小程序的复杂性，又不想数据提到外层，我在插件里面定义了一个 `weixin_type` prop ，用于小程序不同模板控制。小程序使用时，需使用者自己去配置 maramlee-waterfalls-flow-nav 插件的模板内容。
 
 小程序使用步骤如下：
 
@@ -153,7 +153,7 @@ export default {
 
 2. 第二步：修改 maramlee-waterfalls-flow-nav 插件图片下方模板
 
-注意：这里修改的是插件 components/maramlee-waterfalls-flow-nav/maramlee-waterfalls-flow-nav.vue
+**注意：这里修改的是插件 components/maramlee-waterfalls-flow-nav/maramlee-waterfalls-flow-nav.vue**
 
 如插件中 53 行注释的类似，script 标签中 116-126 行有详细注释，请自行查看。
 
@@ -215,6 +215,7 @@ weixin_type: {
     :single="true"
     @add-data="getListHandle"
   >
+    <!-- #ifndef  MP-WEIXIN -->
     <template v-slot:default="item">
       <!-- 此处添加插槽内容 -->
       <!-- <view class="cnt">
@@ -222,6 +223,7 @@ weixin_type: {
           <view class="text">{{item.text}}</view>
         </view> -->
     </template>
+    <!-- #endif -->
   </waterfallsFlowNav>
 </template>
 ```
@@ -257,7 +259,7 @@ weixin_type: {
 
 ### add-data 事件详解
 
-此事件为解决不同的人封装的请求方法不同，不同接口请求的数据不同而产生。必需要配合很重要的两个组件方法：successSetData、failMoreBack 使用。
+此事件为解决不同的人封装的请求方法不同，不同接口请求的数据不同而产生。必需要配合很重要的两个组件方法：`successSetData`、`failMoreBack` 使用。
 
 ```javascript
 getListHandle() {
@@ -308,26 +310,26 @@ getListHandle() {
 
 获取列表方法
 
-this.$refs.waterfalls_flow_nav.getList();
+`this.$refs.waterfalls_flow_nav.getList();`
 
 #### 参数
 
 1. isRefresh
 
-   默认 false
+   默认 `false`
 
-   是否强制刷新，若为 true，即请求之前先把 moreNavIndex 对应的原来的数据清空，常用在下拉刷新
+   是否强制刷新，若为 `true`，即请求之前先把 `moreNavIndex` 对应的原来的数据清空，常用在下拉刷新
 
 2. navClick
 
-   默认 false
+   默认 `false`
 
-   是否是 nav 点击，此值区分一般的加载和点击 nav 加载，由于 nav 点击，如果已经有数据，即无需加载数据 \*
+   是否是 nav 点击，此值区分一般的加载和点击 nav 加载，由于 nav 点击，如果已经有数据，即无需加载数据
 
 #### 用法示例
 
-1. 页面中用于上拉加载更多（onReachBottom）中：this.$refs.waterfalls_flow_nav.getList();
-2. 页面中用于重新加载此项：this.$refs.waterfalls_flow_nav.getList(true);
+1. 页面中用于上拉加载更多（`onReachBottom`）中：`this.$refs.waterfalls_flow_nav.getList();`
+2. 页面中用于重新加载此项：`this.$refs.waterfalls_flow_nav.getList(true);`
 
 ### successSetData 使用
 
@@ -335,7 +337,7 @@ this.$refs.waterfalls_flow_nav.getList();
 
 请求数据成功后调用
 
-this.$refs.waterfalls_flow_nav.successSetData(list, total_page);
+`this.$refs.waterfalls_flow_nav.successSetData(list, total_page);`
 
 #### 参数
 
@@ -353,9 +355,9 @@ this.$refs.waterfalls_flow_nav.successSetData(list, total_page);
 
 ### initNavLists 与 refresh 比较
 
-initNavLists 是初始化 moreNavLists 的数据，即所有的数据清空。
+initNavLists 是初始化 `moreNavLists` 的数据，即所有的数据清空。
 
-refresh 只清空 moreNavIndex 对应即当前选择的 nav 项的数据。
+refresh 只清空 `moreNavIndex` 对应即当前选择的 nav 项的数据。
 
 ## 提示
 
